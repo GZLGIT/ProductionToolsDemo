@@ -25,15 +25,36 @@
     
     UIButton *timeBtn = [UIButton buttonWithType:(UIButtonTypeSystem)];
     
-    timeBtn.frame = CGRectMake(10, TableViewFrameY, 100, 30);
+    timeBtn.frame = CGRectMake(10, TableViewFrameY+40, 100, 30);
     [timeBtn setTitle:@"请选择时间" forState:(UIControlStateNormal)];
      [self.view addSubview:timeBtn];
      @weakify(self);
      [[timeBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
          @strongify(self);
-        CustomDatePicker *pickerView = [[CustomDatePicker alloc] initWithFrame:(CGRectMake(0, 500, Size_width, 200)) withType:(PickerViewTypeYear)];
+         CustomDatePicker *pickerView = [[CustomDatePicker alloc] initWithFrame:(CGRectMake(0, 500, Size_width, 200)) withType:(PickerViewTypeDefault)];
          [KEYWINDOW addSubview:pickerView];
      }];
+    
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:timeBtn.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight cornerRadii:CGSizeMake(20, 20)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    // 描边宽度
+    maskLayer.lineWidth = 1;
+    
+    // kCGLineCapButt 该属性值指定不绘制端点， 线条结尾处直接结束。这是默认值。不附加任何形状
+    // kCGLineCapRound 该属性值指定绘制圆形端点， 线条结尾处绘制一个直径为线条宽度的半圆(在线段头尾添加半径为线段 lineWidth 一半的半圆)
+    // kCGLineCapSquare 该属性值指定绘制方形端点。与butt相但比butt长点(在线段头尾添加半径为线段 lineWidth 一半的矩形)
+    maskLayer.lineCap = kCALineCapSquare;
+    // 带边框则两个颜色不要设置成一样即可
+    // 描边颜色
+    maskLayer.strokeColor = [UIColor redColor].CGColor;
+    // 填充颜色 不需要背景色的话 需要设置成白色
+    maskLayer.fillColor = [UIColor whiteColor].CGColor;
+    
+    maskLayer.path = maskPath.CGPath;
+    
+    [timeBtn.layer addSublayer:maskLayer];
+    
 }
 
 

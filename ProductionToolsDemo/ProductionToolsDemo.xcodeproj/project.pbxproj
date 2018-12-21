@@ -18,6 +18,7 @@
 		A4B0819221CA73C70019E201 /* ProductionToolsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B0819121CA73C70019E201 /* ProductionToolsDemoTests.m */; };
 		A4B0819D21CA73C70019E201 /* ProductionToolsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B0819C21CA73C70019E201 /* ProductionToolsDemoUITests.m */; };
 		A4B081AE21CA74B70019E201 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B081AD21CA74B70019E201 /* UIColor+Hex.m */; };
+		A4D84AB221CD13A300CFEB1E /* JQRadiusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D84AB121CD13A300CFEB1E /* JQRadiusView.m */; };
 		A4DF1C7821CB8E5F009A7230 /* CustomDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DF1C7621CB8E5F009A7230 /* CustomDatePicker.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		A4B081AB21CA741B0019E201 /* BaseHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHeader.pch; sourceTree = "<group>"; };
 		A4B081AC21CA74B70019E201 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		A4B081AD21CA74B70019E201 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		A4D84AB021CD13A300CFEB1E /* JQRadiusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQRadiusView.h; sourceTree = "<group>"; };
+		A4D84AB121CD13A300CFEB1E /* JQRadiusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQRadiusView.m; sourceTree = "<group>"; };
 		A4DF1C7421CB8E5F009A7230 /* CustomDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatePicker.h; sourceTree = "<group>"; };
 		A4DF1C7621CB8E5F009A7230 /* CustomDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatePicker.m; sourceTree = "<group>"; };
 		E3B88D6C390F51E57A44373F /* libPods-ProductionToolsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProductionToolsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +146,7 @@
 				A4B081AD21CA74B70019E201 /* UIColor+Hex.m */,
 				A4B081AA21CA73E40019E201 /* BaseConfig.h */,
 				A4B081AB21CA741B0019E201 /* BaseHeader.pch */,
+				A4D84AAF21CD13A300CFEB1E /* JQRadiusView */,
 				A4DF1C7221CB8E5F009A7230 /* AlertCustomDataPickerView */,
 				A4B0817B21CA73C60019E201 /* Main.storyboard */,
 				A4B0818121CA73C70019E201 /* Assets.xcassets */,
@@ -170,6 +174,15 @@
 				A4B0819E21CA73C70019E201 /* Info.plist */,
 			);
 			path = ProductionToolsDemoUITests;
+			sourceTree = "<group>";
+		};
+		A4D84AAF21CD13A300CFEB1E /* JQRadiusView */ = {
+			isa = PBXGroup;
+			children = (
+				A4D84AB021CD13A300CFEB1E /* JQRadiusView.h */,
+				A4D84AB121CD13A300CFEB1E /* JQRadiusView.m */,
+			);
+			path = JQRadiusView;
 			sourceTree = "<group>";
 		};
 		A4DF1C7221CB8E5F009A7230 /* AlertCustomDataPickerView */ = {
@@ -375,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B0817A21CA73C60019E201 /* ViewController.m in Sources */,
+				A4D84AB221CD13A300CFEB1E /* JQRadiusView.m in Sources */,
 				A4DF1C7821CB8E5F009A7230 /* CustomDatePicker.m in Sources */,
 				A4B081AE21CA74B70019E201 /* UIColor+Hex.m in Sources */,
 				A4B0818021CA73C60019E201 /* ProductionToolsDemo.xcdatamodeld in Sources */,

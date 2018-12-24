@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "CustomDatePicker.h"
+#import "CustomTextTableViewCell.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, copy) UITableView *tableView;
 
 
 @end
@@ -23,17 +25,27 @@
 //    [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self loadSubView];
+    
+    
+}
+
+
+- (void)loadSubView {
+    
+    [self.view addSubview:self.tableView];
+    /*
     UIButton *timeBtn = [UIButton buttonWithType:(UIButtonTypeSystem)];
     
     timeBtn.frame = CGRectMake(10, TableViewFrameY+40, 100, 30);
     [timeBtn setTitle:@"请选择时间" forState:(UIControlStateNormal)];
-     [self.view addSubview:timeBtn];
-     @weakify(self);
-     [[timeBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-         @strongify(self);
-         CustomDatePicker *pickerView = [[CustomDatePicker alloc] initWithFrame:(CGRectMake(0, 500, Size_width, 200)) withType:(PickerViewTypeDefault)];
-         [KEYWINDOW addSubview:pickerView];
-     }];
+    [self.view addSubview:timeBtn];
+    @weakify(self);
+    [[timeBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+
+        CustomDatePicker *pickerView = [[CustomDatePicker alloc] initWithFrame:(CGRectMake(0, 500, Size_width, 200)) withType:(PickerViewTypeDefault)];
+        [KEYWINDOW addSubview:pickerView];
+    }];
     
     
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:timeBtn.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight cornerRadii:CGSizeMake(20, 20)];
@@ -54,8 +66,37 @@
     maskLayer.path = maskPath.CGPath;
     
     [timeBtn.layer addSublayer:maskLayer];
+*/
+    
     
 }
 
+#pragma mark--tableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 100;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CustomTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imgCell"];
+    if (!cell) {
+        cell = [[CustomTextTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"imgCell"];
+        
+    }
+    
+    return cell;
+}
+
+#pragma mark--setter&&getter
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, TableViewFrameY, Size_width, Size_height-TableViewFrameY)) style:(UITableViewStylePlain)];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.rowHeight = 40;
+        
+    }
+    return _tableView;
+}
 
 @end

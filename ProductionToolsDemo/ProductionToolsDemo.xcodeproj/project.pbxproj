@@ -20,6 +20,8 @@
 		A4B081AE21CA74B70019E201 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B081AD21CA74B70019E201 /* UIColor+Hex.m */; };
 		A4D84AB221CD13A300CFEB1E /* JQRadiusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D84AB121CD13A300CFEB1E /* JQRadiusView.m */; };
 		A4DF1C7821CB8E5F009A7230 /* CustomDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DF1C7621CB8E5F009A7230 /* CustomDatePicker.m */; };
+		A4EC049B21CDE38B001E5C68 /* CustomTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EC049A21CDE38B001E5C68 /* CustomTextTableViewCell.m */; };
+		A4EC04A121CDE96F001E5C68 /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EC04A021CDE96F001E5C68 /* UIImageView+CornerRadius.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		A4D84AB121CD13A300CFEB1E /* JQRadiusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQRadiusView.m; sourceTree = "<group>"; };
 		A4DF1C7421CB8E5F009A7230 /* CustomDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatePicker.h; sourceTree = "<group>"; };
 		A4DF1C7621CB8E5F009A7230 /* CustomDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatePicker.m; sourceTree = "<group>"; };
+		A4EC049921CDE38B001E5C68 /* CustomTextTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTextTableViewCell.h; sourceTree = "<group>"; };
+		A4EC049A21CDE38B001E5C68 /* CustomTextTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTextTableViewCell.m; sourceTree = "<group>"; };
+		A4EC049F21CDE96F001E5C68 /* UIImageView+CornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CornerRadius.h"; sourceTree = "<group>"; };
+		A4EC04A021CDE96F001E5C68 /* UIImageView+CornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CornerRadius.m"; sourceTree = "<group>"; };
 		E3B88D6C390F51E57A44373F /* libPods-ProductionToolsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProductionToolsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034D6E600491020AE153816 /* Pods-ProductionToolsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductionToolsDemo.release.xcconfig"; path = "Target Support Files/Pods-ProductionToolsDemo/Pods-ProductionToolsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F6F4B727041A21D55481D859 /* Pods-ProductionToolsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductionToolsDemo.debug.xcconfig"; path = "Target Support Files/Pods-ProductionToolsDemo/Pods-ProductionToolsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,8 +150,12 @@
 				A4B0817921CA73C60019E201 /* ViewController.m */,
 				A4B081AC21CA74B70019E201 /* UIColor+Hex.h */,
 				A4B081AD21CA74B70019E201 /* UIColor+Hex.m */,
+				A4EC049F21CDE96F001E5C68 /* UIImageView+CornerRadius.h */,
+				A4EC04A021CDE96F001E5C68 /* UIImageView+CornerRadius.m */,
 				A4B081AA21CA73E40019E201 /* BaseConfig.h */,
 				A4B081AB21CA741B0019E201 /* BaseHeader.pch */,
+				A4EC049921CDE38B001E5C68 /* CustomTextTableViewCell.h */,
+				A4EC049A21CDE38B001E5C68 /* CustomTextTableViewCell.m */,
 				A4D84AAF21CD13A300CFEB1E /* JQRadiusView */,
 				A4DF1C7221CB8E5F009A7230 /* AlertCustomDataPickerView */,
 				A4B0817B21CA73C60019E201 /* Main.storyboard */,
@@ -394,6 +404,8 @@
 				A4B0818021CA73C60019E201 /* ProductionToolsDemo.xcdatamodeld in Sources */,
 				A4B0818821CA73C70019E201 /* main.m in Sources */,
 				A4B0817721CA73C60019E201 /* AppDelegate.m in Sources */,
+				A4EC049B21CDE38B001E5C68 /* CustomTextTableViewCell.m in Sources */,
+				A4EC04A121CDE96F001E5C68 /* UIImageView+CornerRadius.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

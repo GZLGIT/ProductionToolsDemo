@@ -9,10 +9,14 @@
 #import "ViewController.h"
 #import "CustomDatePicker.h"
 #import "CustomTextTableViewCell.h"
+#import "RequestNewViewController.h"
+#import "TextCollectionViewController.h"
+
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, copy) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 
 @end
@@ -22,9 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.dataArray = @[@"请选择时间", @"网络请求", @"collectionView"].mutableCopy;
     [self loadSubView];
     
     
@@ -33,21 +37,28 @@
 
 - (void)loadSubView {
     
+    
+    NSString *str = @"问哈都好得很华东师大,结婚啥时间德哈卡萨科技和贷款计划外挖好卡的很问哈都好得很华东师大,结婚啥时间德哈卡萨科技和贷款计";
+    CGFloat height = [CheckOutTool calculateRowHeight:str fontSize:14 controlWidth:Size_width-40];
+    NSLog(@"%.4f", height);
+    
+    
     [self.view addSubview:self.tableView];
-    /*
-    UIButton *timeBtn = [UIButton buttonWithType:(UIButtonTypeSystem)];
-    
-    timeBtn.frame = CGRectMake(10, TableViewFrameY+40, 100, 30);
-    [timeBtn setTitle:@"请选择时间" forState:(UIControlStateNormal)];
-    [self.view addSubview:timeBtn];
-    @weakify(self);
-    [[timeBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
 
-        CustomDatePicker *pickerView = [[CustomDatePicker alloc] initWithFrame:(CGRectMake(0, 500, Size_width, 200)) withType:(PickerViewTypeDefault)];
-        [KEYWINDOW addSubview:pickerView];
-    }];
+    UIView *footerView = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, Size_width, 120))];
+    footerView.backgroundColor = self.navView.backgroundColor;
+    self.tableView.tableFooterView = footerView;
     
+
+    UILabel *lab = [[UILabel alloc] initWithFrame:(CGRectMake(20, 0, Size_width-40, 100))];
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.numberOfLines = 0;
+    lab.backgroundColor = [UIColor whiteColor];
+    [footerView addSubview:lab];
+    NSMutableAttributedString *strNew = [CheckOutTool atttibutedStringForString:str LineSpace:4 ColumnSpace:6];
+    lab.attributedText = strNew;
     
+    /*
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:timeBtn.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight cornerRadii:CGSizeMake(20, 20)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     // 描边宽度
@@ -68,12 +79,17 @@
     [timeBtn.layer addSublayer:maskLayer];
 */
     
+}
+
+- (void)choseTimeCellAction {
     
+    CustomDatePicker *pickerView = [[CustomDatePicker alloc] initWithFrame:(CGRectMake(0, 500, Size_width, 200)) withType:(PickerViewTypeDefault)];
+    [KEYWINDOW addSubview:pickerView];
 }
 
 #pragma mark--tableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,8 +99,38 @@
         cell = [[CustomTextTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"imgCell"];
         
     }
+    cell.titleLab.text = self.dataArray[indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            [self choseTimeCellAction];
+        }
+            break;
+            case 1:
+        {
+            RequestNewViewController *requestVC = [RequestNewViewController new];
+
+            [self.navigationController pushViewController:requestVC animated:YES];
+            
+        }
+            break;
+        case 2:
+        {
+            TextCollectionViewController *collectionVC = [TextCollectionViewController new];
+            
+            [self.navigationController pushViewController:collectionVC animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark--setter&&getter
@@ -94,7 +140,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 40;
-        
+        _tableView.tableFooterView = [[UIView alloc] initWithFrame:(CGRectZero)];
     }
     return _tableView;
 }

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CustomTextTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *titleLab;
+
 
 @end
 

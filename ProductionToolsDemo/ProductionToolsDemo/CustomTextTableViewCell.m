@@ -42,10 +42,15 @@
     self.headerImg.layer.masksToBounds = YES;
     
     
+    self.titleLab = [[UILabel alloc] initWithFrame:(CGRectMake(CGRectGetMaxX(self.headerImg.frame)+14, 10, 100, 20))];
+    self.titleLab.font = [UIFont systemFontOfSize:14];
+    self.titleLab.textColor = [UIColor darkGrayColor];
+    [self.contentView addSubview:self.titleLab];
     
+    /*
     // 全圆角 内存 33.8~34
     self.headerImg.image = [self.headerImg imageWithRoundCorner:self.headerImg.image cornerRadius:4 size:(CGSizeMake(30, 30))];
-    
+    */
     
 }
 

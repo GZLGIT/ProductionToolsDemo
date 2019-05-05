@@ -11,11 +11,6 @@
 
 
 
-#define IS_IPHONE_X ((Size_height == 812.0f || Size_height == 896.0f) ? YES : NO)
-#define TableViewFrameY ((IS_IPHONE_X) ? 88.0f : 64.0f)
-#define TableViewFrameBottom ((IS_IPHONE_X) ? 83.0f : 49.0f)
-
-
 // 宏定义当前屏幕的宽度
 #define Size_width [UIScreen mainScreen].bounds.size.width
 
@@ -28,6 +23,33 @@
 
 
 #define F(string, args...)                  [NSString stringWithFormat:string, args]
+
+// 判断 iPhone X xr,xsmax
+#define IS_IPHONEX (([[UIScreen mainScreen] bounds].size.height - 812.0) >= 0 ? YES : NO)
+
+// 状态栏默认高度
+#define kStatusBarHeight ((IS_IPHONEX) ? 44.0f : 20.0f)
+// 导航栏默认高度
+#define kNavigationBarHeight 44.0
+// 状态栏加导航栏高度
+#define kTopHeight (kStatusBarHeight + kNavigationBarHeight)
+// 底部高度
+#define kBottomHeight ((IS_IPHONEX) ? 34.0 : 0.0)
+
+#define KTabBarBottomHeight ((IS_IPHONEX) ? 83.0f : 49.0f)
+
+#define ScaleW(width)  [F(@"%f", width*Size_width/375.0f) integerValue]
+
+#define ScaleH(height) [F(@"%f", height*Size_height/667.0f) integerValue]
+
+
+#define ScaleFont(size) ([CheckOutTool setDifferenceScreenFontSizeWithFontOfSize:size])
+
+// iPhoneX  iPhoneXS  iPhoneXS Max  iPhoneXR 机型判断
+//#define IS_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? ((NSInteger)(([[UIScreen mainScreen] currentMode].size.height/[[UIScreen mainScreen] currentMode].size.width)*100) == 216) : NO)
+
+
+
 
 
 //获取rgb颜色
@@ -46,7 +68,6 @@ alpha:(float)1.0]
 
 #define isIos7      ([[[UIDevice currentDevice] systemVersion] floatValue])
 
-#define StatusbarSize ((IS_IPHONE_X) ? 44.0f : 20.0f)
 
 
 #endif /* BaseConfig_h */

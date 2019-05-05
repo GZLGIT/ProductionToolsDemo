@@ -494,6 +494,18 @@
 
 - (void)handelTimeStringShow {
     
+    NSString *monthStr;
+    NSString *dayStr;
+    if (month < 10) {
+        monthStr = [NSString stringWithFormat:@"0%d", month];
+    }else {
+        monthStr = [NSString stringWithFormat:@"%d", month];
+    }
+    if (day < 10) {
+        dayStr = [NSString stringWithFormat:@"0%d", day];
+    }else {
+        dayStr = [NSString stringWithFormat:@"%d", day];
+    }
     NSString *hourStr;
     NSString *minutesStr;
     NSString *secondSgtr;
@@ -518,12 +530,12 @@
         case PickerViewTypeDefault:
         {
             
-            titleLab.text = [NSString stringWithFormat:@"%d-%d-%d %@:%@:%@", year, month, day, hourStr, minutesStr, secondSgtr];
+            titleLab.text = [NSString stringWithFormat:@"%d-%@-%@ %@:%@:%@", year, monthStr, dayStr, hourStr, minutesStr, secondSgtr];
         }
             break;
         case PickerViewTypeYear:
         {
-            titleLab.text = [NSString stringWithFormat:@"%d-%d-%d", year, month, day];
+            titleLab.text = [NSString stringWithFormat:@"%d-%@-%@", year, monthStr, dayStr];
         }
             break;
         case PickerViewTypeTime:

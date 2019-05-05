@@ -22,7 +22,7 @@
 #import "CheckOutTool.h"
 #import "NetWorkManager.h"
 #import "NSString+ReplaceUnicode.h"
-
+#import "UIView+Extension.h"
 
 
 #endif /* BaseHeader_pch */

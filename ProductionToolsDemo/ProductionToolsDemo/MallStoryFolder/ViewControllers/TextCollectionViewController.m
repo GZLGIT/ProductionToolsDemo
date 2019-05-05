@@ -7,6 +7,8 @@
 //
 
 #import "TextCollectionViewController.h"
+#import "GZLHeaderFlowLayout.h"
+#import "TextCollectionViewCell.h"
 
 @interface TextCollectionViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -20,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.titleLabel.text = @"collectionView";
+
+    [self.collectionView registerClass:[TextCollectionViewCell class] forCellWithReuseIdentifier:@"clellID"];
+    
+    [self.view addSubview:self.collectionView];
     
 }
 
@@ -31,13 +37,27 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [UICollectionViewCell new];
+    
+    TextCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"clellID" forIndexPath:indexPath];
+    
+    return cell;
 }
 
 #pragma mark--setter&getter
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        _collectionView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, TableViewFrameY, Size_width, Size_height-TableViewFrameY)) collectionViewLayout:nil];
+        
+        GZLHeaderFlowLayout *flowLayout = [[GZLHeaderFlowLayout alloc] init];
+        flowLayout.minimumLineSpacing = 10;
+        flowLayout.minimumInteritemSpacing = 12;
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, 12, 0, 12);
+        flowLayout.itemSize = CGSizeMake((Size_width-36)/2, (Size_width-36)/2+75);
+        
+        _collectionView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, kTopHeight, Size_width, Size_height-kBottomHeight)) collectionViewLayout:flowLayout];
+        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        
     }
     return _collectionView;
 }

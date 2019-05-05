@@ -616,5 +616,18 @@
     
 }
 
++ (CGFloat)setDifferenceScreenFontSizeWithFontOfSize:(CGFloat)size {
+    if (Size_width == 375) {
+        return size;
+    }else if(Size_width == 320)
+    {
+        return size*0.85;
+    }else if(Size_width == 414) {
+        return size *1.05;
+    }
+    return size;
+}
+
+
 
 @end

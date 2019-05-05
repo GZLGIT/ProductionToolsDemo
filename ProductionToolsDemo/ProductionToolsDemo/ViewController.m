@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "CustomDatePicker.h"
 #import "CustomTextTableViewCell.h"
-#import "RequestNewViewController.h"
 #import "TextCollectionViewController.h"
 
 
@@ -28,7 +27,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.dataArray = @[@"请选择时间", @"网络请求", @"collectionView"].mutableCopy;
+    self.dataArray = @[@"请选择时间", @"圆滑的折线段", @"collectionView"].mutableCopy;
     [self loadSubView];
     
     
@@ -114,9 +113,6 @@
             break;
             case 1:
         {
-            RequestNewViewController *requestVC = [RequestNewViewController new];
-
-            [self.navigationController pushViewController:requestVC animated:YES];
             
         }
             break;
@@ -136,7 +132,7 @@
 #pragma mark--setter&&getter
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, TableViewFrameY, Size_width, Size_height-TableViewFrameY)) style:(UITableViewStylePlain)];
+        _tableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, kTopHeight, Size_width, Size_height-kBottomHeight)) style:(UITableViewStylePlain)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 40;

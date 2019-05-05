@@ -1,0 +1,14 @@
+platform:ios,’9.0’
+target 'ProductionToolsDemo'do
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'MBProgressHUD'
+pod 'TZImagePickerController'
+pod 'SDCycleScrollView'
+pod 'ReactiveObjC'
+pod 'MJExtension'
+pod 'IQKeyboardManager'
+pod 'MJRefresh', '3.1.12'
+pod 'LBXScan'
+pod 'Masonry', '~> 1.1.0'
+end

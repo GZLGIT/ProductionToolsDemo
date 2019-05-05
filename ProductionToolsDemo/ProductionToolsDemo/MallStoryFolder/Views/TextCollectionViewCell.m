@@ -10,4 +10,11 @@
 
 @implementation TextCollectionViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if ([super initWithFrame:frame]) {
+        
+    }
+    return self;
+}
+
 @end

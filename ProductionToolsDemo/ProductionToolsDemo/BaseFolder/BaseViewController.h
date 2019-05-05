@@ -16,11 +16,12 @@ typedef NS_ENUM(NSInteger, RefreshDataType) {
 
 @interface BaseViewController : UIViewController
 
-@property (nonatomic,retain)UIButton *lbtn;
-@property (nonatomic,retain)UIView *statusBarView;
-@property (nonatomic,retain)UIImageView *navView;
-@property (nonatomic,retain)UIButton *rbtn;
-@property (nonatomic,retain)UILabel *titleLabel;
+@property (nonatomic, retain) UIButton *lbtn;
+@property (nonatomic, retain) UIView *statusBarView;
+@property (nonatomic, retain) UIView *navView;
+@property (nonatomic, retain) UIImageView *navViewImg;
+@property (nonatomic, retain) UIButton *rbtn;
+@property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *coverBtn;
 
 

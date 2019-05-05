@@ -23,6 +23,26 @@
     [self loadBaseSubViews];
     
     
+    
+}
+
+- (void)setNaviView {
+    if (!_navView) {
+        _navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Size_width, kTopHeight)];
+        [_navView setGradientBackgroundWithColors:@[RGBA(84, 106, 253, 1),RGBA(46, 193, 255, 1)] locations:nil startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 0)];
+        UIButton *btn = [[UIButton alloc]init];
+        btn.frame = CGRectMake(ScaleW(10), ScaleH(2)+kStatusBarHeight, ScaleW(28), ScaleH(38));
+        [btn setImage:[UIImage imageNamed:@"返回白"] forState:UIControlStateNormal];
+        btn.imageView.contentMode = UIViewContentModeCenter;
+        [btn addTarget:self action:@selector(temaBack) forControlEvents:UIControlEventTouchUpInside];
+        [_navView addSubview:btn];
+        
+        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScaleW(90), kStatusBarHeight+ScaleH(11), ScaleW(195), ScaleH(22))];
+        _titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:ScaleFont(18)];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.textColor = [UIColor whiteColor];
+        [_navView addSubview:_titleLabel];
+    }
 }
 
 - (void)loadBaseSubViews {
@@ -38,13 +58,13 @@
     }
     if (!_navView)
     {
-        self.navView = [[UIImageView alloc] init];
+        self.navViewImg = [[UIImageView alloc] init];
         
-        self.navView.tag = 1;
+        self.navViewImg.tag = 1;
         
-        ((UIImageView *)_navView).backgroundColor = [UIColor colorWithHexString:@"#fdd000"];
-        [self.view insertSubview:_navView belowSubview:_statusBarView];
-        _navView.userInteractionEnabled = YES;
+        ((UIImageView *)_navViewImg).backgroundColor = [UIColor colorWithHexString:@"#fdd000"];
+        [self.view insertSubview:_navViewImg belowSubview:_statusBarView];
+        _navViewImg.userInteractionEnabled = YES;
         
         _titleLabel =[[UILabel alloc]init];
         _titleLabel.tag = 2;
@@ -52,18 +72,18 @@
         [_titleLabel setTextColor:[UIColor whiteColor]];
         [_titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
         [_titleLabel setBackgroundColor:[UIColor clearColor]];
-        [_navView addSubview:_titleLabel];
+        [_navViewImg addSubview:_titleLabel];
         
         _lbtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_lbtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
         _lbtn.tag = 3;
         [_lbtn addTarget:self action:@selector(backButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_navView addSubview:_lbtn];
+        [_navViewImg addSubview:_lbtn];
         
         _rbtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
         _rbtn.tag = 4;
-        [_navView addSubview:_rbtn];
+        [_navViewImg addSubview:_rbtn];
 
     }
     [self configNav];
@@ -74,11 +94,11 @@
 
 - (void)configNav
 {
-    [_statusBarView setFrame:CGRectMake(0, 0, self.view.frame.size.width, StatusbarSize)];
-    [self.navView  setFrame:CGRectMake(0.f, StatusbarSize, Size_width, 44.f)];
+    [_statusBarView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kStatusBarHeight)];
+    [self.navViewImg  setFrame:CGRectMake(0.f, kStatusBarHeight, Size_width, 44.f)];
     [_lbtn setFrame:CGRectMake(0,0, 50,44)];
     [_rbtn setFrame:CGRectMake(Size_width - 90, 0, 80, 44)];
-    [_titleLabel setFrame:CGRectMake(0, (_navView.frame.size.height - 40)/2,Size_width, 40)];
+    [_titleLabel setFrame:CGRectMake(0, (_navViewImg.frame.size.height - 40)/2,Size_width, 40)];
     
 }
 

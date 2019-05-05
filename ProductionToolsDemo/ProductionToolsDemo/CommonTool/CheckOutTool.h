@@ -115,4 +115,8 @@
  */
 + (NSMutableAttributedString *)atttibutedStringForString:(NSString *)string LineSpace:(CGFloat)lineSpace ColumnSpace:(CGFloat)columnSpace;
 
+// 调整字体大小
++ (CGFloat)setDifferenceScreenFontSizeWithFontOfSize:(CGFloat)size;
+
+
 @end

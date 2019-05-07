@@ -8,7 +8,7 @@
 
 #import "YSRightToLeftAnimationTransition.h"
 #import "UIView+Extension.h"
-const CGFloat duration = 0.7f;
+const CGFloat duration = 0.5f;
 
 @implementation YSRightToLeftAnimationTransition
 

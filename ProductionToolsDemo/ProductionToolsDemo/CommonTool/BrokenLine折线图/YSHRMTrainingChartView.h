@@ -17,11 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 //X轴标题
 @property (nonatomic, strong) UILabel *bottomLabel;
 /** 点数据 */
-@property (nonatomic,strong) NSArray *dataArrOfPoint;
+@property (nonatomic, strong) NSArray *dataArrOfPoint;
 /** Y轴坐标数据 */
 @property (nonatomic, strong) NSArray *dataArrOfY;
 /** X轴坐标数据 */
 @property (nonatomic, strong) NSArray *dataArrOfX;
+
 
 @end
 

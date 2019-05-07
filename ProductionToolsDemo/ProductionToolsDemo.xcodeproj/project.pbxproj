@@ -33,6 +33,9 @@
 		A4BDB99021D24CDB00E70A6C /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BDB98A21D24CDB00E70A6C /* NSDictionary+HYBUnicodeReadable.m */; };
 		A4BDB99121D24CDB00E70A6C /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BDB98B21D24CDB00E70A6C /* NSSet+HYBUnicodeReadable.m */; };
 		A4CD631C21D64DB8006BB6AE /* TextCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD631B21D64DB8006BB6AE /* TextCollectionViewController.m */; };
+		A4CFBAE922817B780034F5A3 /* TextBrokenLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CFBAE822817B780034F5A3 /* TextBrokenLineViewController.m */; };
+		A4CFBAEC22817EE90034F5A3 /* CSLateralSpreadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CFBAEB22817EE90034F5A3 /* CSLateralSpreadsViewController.m */; };
+		A4CFBAF0228188570034F5A3 /* YSHRMTrainingChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CFBAEE228188570034F5A3 /* YSHRMTrainingChartView.m */; };
 		A4D7765E2223F47A0066522F /* CustomHorizontalSpacingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D7765D2223F47A0066522F /* CustomHorizontalSpacingFlowLayout.m */; };
 		A4D84AB221CD13A300CFEB1E /* JQRadiusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D84AB121CD13A300CFEB1E /* JQRadiusView.m */; };
 		A4DF1C7821CB8E5F009A7230 /* CustomDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DF1C7621CB8E5F009A7230 /* CustomDatePicker.m */; };
@@ -42,8 +45,6 @@
 		A4FC61CC227ECB0F00339D4A /* YSRightToLeftAnimationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FC61C8227ECB0F00339D4A /* YSRightToLeftAnimationTransition.m */; };
 		A4FC61CD227ECB0F00339D4A /* YSRightToleftPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FC61C9227ECB0F00339D4A /* YSRightToleftPresentationController.m */; };
 		A4FC61CE227ECB0F00339D4A /* YSRightToLeftTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FC61CA227ECB0F00339D4A /* YSRightToLeftTransition.m */; };
-		A4FC61D1227ECC6F00339D4A /* YSHRMTrainingChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FC61D0227ECC6F00339D4A /* YSHRMTrainingChartView.m */; };
-		A4FC61D4227ECC9200339D4A /* YSHRManagerTGTrainingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FC61D2227ECC9200339D4A /* YSHRManagerTGTrainingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,12 @@
 		A4BDB98E21D24CDB00E70A6C /* NSSet+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
 		A4CD631A21D64DB8006BB6AE /* TextCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextCollectionViewController.h; sourceTree = "<group>"; };
 		A4CD631B21D64DB8006BB6AE /* TextCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextCollectionViewController.m; sourceTree = "<group>"; };
+		A4CFBAE722817B780034F5A3 /* TextBrokenLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextBrokenLineViewController.h; sourceTree = "<group>"; };
+		A4CFBAE822817B780034F5A3 /* TextBrokenLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextBrokenLineViewController.m; sourceTree = "<group>"; };
+		A4CFBAEA22817EE90034F5A3 /* CSLateralSpreadsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSLateralSpreadsViewController.h; sourceTree = "<group>"; };
+		A4CFBAEB22817EE90034F5A3 /* CSLateralSpreadsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSLateralSpreadsViewController.m; sourceTree = "<group>"; };
+		A4CFBAEE228188570034F5A3 /* YSHRMTrainingChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHRMTrainingChartView.m; sourceTree = "<group>"; };
+		A4CFBAEF228188570034F5A3 /* YSHRMTrainingChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHRMTrainingChartView.h; sourceTree = "<group>"; };
 		A4D7765C2223F47A0066522F /* CustomHorizontalSpacingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHorizontalSpacingFlowLayout.h; sourceTree = "<group>"; };
 		A4D7765D2223F47A0066522F /* CustomHorizontalSpacingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHorizontalSpacingFlowLayout.m; sourceTree = "<group>"; };
 		A4D84AB021CD13A300CFEB1E /* JQRadiusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQRadiusView.h; sourceTree = "<group>"; };
@@ -133,10 +140,6 @@
 		A4FC61C9227ECB0F00339D4A /* YSRightToleftPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRightToleftPresentationController.m; sourceTree = "<group>"; };
 		A4FC61CA227ECB0F00339D4A /* YSRightToLeftTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRightToLeftTransition.m; sourceTree = "<group>"; };
 		A4FC61CB227ECB0F00339D4A /* YSRightToleftPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRightToleftPresentationController.h; sourceTree = "<group>"; };
-		A4FC61CF227ECC6F00339D4A /* YSHRMTrainingChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHRMTrainingChartView.h; sourceTree = "<group>"; };
-		A4FC61D0227ECC6F00339D4A /* YSHRMTrainingChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHRMTrainingChartView.m; sourceTree = "<group>"; };
-		A4FC61D2227ECC9200339D4A /* YSHRManagerTGTrainingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHRManagerTGTrainingView.m; sourceTree = "<group>"; };
-		A4FC61D3227ECC9200339D4A /* YSHRManagerTGTrainingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHRManagerTGTrainingView.h; sourceTree = "<group>"; };
 		E3B88D6C390F51E57A44373F /* libPods-ProductionToolsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProductionToolsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034D6E600491020AE153816 /* Pods-ProductionToolsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductionToolsDemo.release.xcconfig"; path = "Target Support Files/Pods-ProductionToolsDemo/Pods-ProductionToolsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F6F4B727041A21D55481D859 /* Pods-ProductionToolsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductionToolsDemo.debug.xcconfig"; path = "Target Support Files/Pods-ProductionToolsDemo/Pods-ProductionToolsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				A44F769221D0F68A00F25B6E /* NewCoreDataManager.m */,
 				A44F769521D0F6A500F25B6E /* NetWorkManager.h */,
 				A44F769421D0F6A500F25B6E /* NetWorkManager.m */,
+				A4CFBAED2281883D0034F5A3 /* BrokenLine折线图 */,
+				A4CFBAE622817A400034F5A3 /* LateralSpreadsVC(侧滑组件) */,
 			);
 			path = CommonTool;
 			sourceTree = "<group>";
@@ -244,8 +249,8 @@
 				A44F76A321D0F71900F25B6E /* LoginModel.h */,
 				A44F76A421D0F71900F25B6E /* LoginModel.m */,
 				A4BDB98821D24CDB00E70A6C /* HYBUnicodeReadable */,
-				A4FC61C2227EBABA00339D4A /* BaseFolder */,
 				A44F768A21D0F62100F25B6E /* CommonTool */,
+				A4FC61C2227EBABA00339D4A /* BaseFolder */,
 				A4CD62EB21D64C86006BB6AE /* MallStoryFolder */,
 				A4D84AAF21CD13A300CFEB1E /* JQRadiusView */,
 				A4DF1C7221CB8E5F009A7230 /* AlertCustomDataPickerView */,
@@ -310,14 +315,12 @@
 		A4CD62ED21D64C86006BB6AE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4CFBAE722817B780034F5A3 /* TextBrokenLineViewController.h */,
+				A4CFBAE822817B780034F5A3 /* TextBrokenLineViewController.m */,
+				A4CFBAEA22817EE90034F5A3 /* CSLateralSpreadsViewController.h */,
+				A4CFBAEB22817EE90034F5A3 /* CSLateralSpreadsViewController.m */,
 				A4CD631A21D64DB8006BB6AE /* TextCollectionViewController.h */,
 				A4CD631B21D64DB8006BB6AE /* TextCollectionViewController.m */,
-				A4FC61C6227ECB0F00339D4A /* YSRightToLeftAnimationTransition.h */,
-				A4FC61C8227ECB0F00339D4A /* YSRightToLeftAnimationTransition.m */,
-				A4FC61CB227ECB0F00339D4A /* YSRightToleftPresentationController.h */,
-				A4FC61C9227ECB0F00339D4A /* YSRightToleftPresentationController.m */,
-				A4FC61C7227ECB0F00339D4A /* YSRightToLeftTransition.h */,
-				A4FC61CA227ECB0F00339D4A /* YSRightToLeftTransition.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -331,12 +334,30 @@
 				A401924021D7A4000018D67D /* GZLHeaderFlowLayout.m */,
 				A401924221D7AC3C0018D67D /* TextCollectionViewCell.h */,
 				A401924321D7AC3C0018D67D /* TextCollectionViewCell.m */,
-				A4FC61D3227ECC9200339D4A /* YSHRManagerTGTrainingView.h */,
-				A4FC61D2227ECC9200339D4A /* YSHRManagerTGTrainingView.m */,
-				A4FC61CF227ECC6F00339D4A /* YSHRMTrainingChartView.h */,
-				A4FC61D0227ECC6F00339D4A /* YSHRMTrainingChartView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A4CFBAE622817A400034F5A3 /* LateralSpreadsVC(侧滑组件) */ = {
+			isa = PBXGroup;
+			children = (
+				A4FC61C6227ECB0F00339D4A /* YSRightToLeftAnimationTransition.h */,
+				A4FC61C8227ECB0F00339D4A /* YSRightToLeftAnimationTransition.m */,
+				A4FC61CB227ECB0F00339D4A /* YSRightToleftPresentationController.h */,
+				A4FC61C9227ECB0F00339D4A /* YSRightToleftPresentationController.m */,
+				A4FC61C7227ECB0F00339D4A /* YSRightToLeftTransition.h */,
+				A4FC61CA227ECB0F00339D4A /* YSRightToLeftTransition.m */,
+			);
+			path = "LateralSpreadsVC(侧滑组件)";
+			sourceTree = "<group>";
+		};
+		A4CFBAED2281883D0034F5A3 /* BrokenLine折线图 */ = {
+			isa = PBXGroup;
+			children = (
+				A4CFBAEF228188570034F5A3 /* YSHRMTrainingChartView.h */,
+				A4CFBAEE228188570034F5A3 /* YSHRMTrainingChartView.m */,
+			);
+			path = "BrokenLine折线图";
 			sourceTree = "<group>";
 		};
 		A4D84AAF21CD13A300CFEB1E /* JQRadiusView */ = {
@@ -434,6 +455,7 @@
 		A4B0816A21CA73C60019E201 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CS;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "龙禧";
 				TargetAttributes = {
@@ -569,14 +591,15 @@
 				A4FC61C5227EC7E000339D4A /* UIView+Extension.m in Sources */,
 				A44F769C21D0F6B900F25B6E /* BaseViewController.m in Sources */,
 				A4D84AB221CD13A300CFEB1E /* JQRadiusView.m in Sources */,
+				A4CFBAE922817B780034F5A3 /* TextBrokenLineViewController.m in Sources */,
 				A4CD631C21D64DB8006BB6AE /* TextCollectionViewController.m in Sources */,
+				A4CFBAEC22817EE90034F5A3 /* CSLateralSpreadsViewController.m in Sources */,
 				A4D7765E2223F47A0066522F /* CustomHorizontalSpacingFlowLayout.m in Sources */,
 				A4DF1C7821CB8E5F009A7230 /* CustomDatePicker.m in Sources */,
 				A44F76A521D0F71900F25B6E /* LoginModel.m in Sources */,
 				A4BDB99121D24CDB00E70A6C /* NSSet+HYBUnicodeReadable.m in Sources */,
 				A44F768D21D0F66100F25B6E /* CheckOutTool.m in Sources */,
 				A4BDB98F21D24CDB00E70A6C /* NSArray+HYBUnicodeReadable.m in Sources */,
-				A4FC61D1227ECC6F00339D4A /* YSHRMTrainingChartView.m in Sources */,
 				A4B081AE21CA74B70019E201 /* UIColor+Hex.m in Sources */,
 				A401924121D7A4000018D67D /* GZLHeaderFlowLayout.m in Sources */,
 				A44F769021D0F67200F25B6E /* SaveData.m in Sources */,
@@ -586,12 +609,12 @@
 				A4FC61CE227ECB0F00339D4A /* YSRightToLeftTransition.m in Sources */,
 				A44F769621D0F6A500F25B6E /* NetWorkManager.m in Sources */,
 				A4FC61CD227ECB0F00339D4A /* YSRightToleftPresentationController.m in Sources */,
+				A4CFBAF0228188570034F5A3 /* YSHRMTrainingChartView.m in Sources */,
 				A4B0818821CA73C70019E201 /* main.m in Sources */,
 				A44F769F21D0F6C900F25B6E /* BaseTabBarViewController.m in Sources */,
 				A44F769921D0F6AF00F25B6E /* BaseModel.m in Sources */,
 				A4B0817721CA73C60019E201 /* AppDelegate.m in Sources */,
 				A4EC049B21CDE38B001E5C68 /* CustomTextTableViewCell.m in Sources */,
-				A4FC61D4227ECC9200339D4A /* YSHRManagerTGTrainingView.m in Sources */,
 				A401924421D7AC3C0018D67D /* TextCollectionViewCell.m in Sources */,
 				A4EC04A121CDE96F001E5C68 /* UIImageView+CornerRadius.m in Sources */,
 			);

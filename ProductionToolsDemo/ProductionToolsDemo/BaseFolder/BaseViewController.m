@@ -20,21 +20,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithHexString:@"#EEEEEE"];
-    [self loadBaseSubViews];
-    
+//    [self loadBaseSubViews];
+    [self setNaviView];
     
     
 }
 
 - (void)setNaviView {
     if (!_navView) {
+        [self.navigationController setNavigationBarHidden:YES];
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+
         _navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Size_width, kTopHeight)];
         [_navView setGradientBackgroundWithColors:@[RGBA(84, 106, 253, 1),RGBA(46, 193, 255, 1)] locations:nil startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 0)];
         UIButton *btn = [[UIButton alloc]init];
         btn.frame = CGRectMake(ScaleW(10), ScaleH(2)+kStatusBarHeight, ScaleW(28), ScaleH(38));
         [btn setImage:[UIImage imageNamed:@"返回白"] forState:UIControlStateNormal];
         btn.imageView.contentMode = UIViewContentModeCenter;
-        [btn addTarget:self action:@selector(temaBack) forControlEvents:UIControlEventTouchUpInside];
+        [btn addTarget:self action:@selector(backButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [_navView addSubview:btn];
         
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScaleW(90), kStatusBarHeight+ScaleH(11), ScaleW(195), ScaleH(22))];
@@ -43,6 +46,7 @@
         _titleLabel.textColor = [UIColor whiteColor];
         [_navView addSubview:_titleLabel];
     }
+    [self.view addSubview:self.navView];
 }
 
 - (void)loadBaseSubViews {

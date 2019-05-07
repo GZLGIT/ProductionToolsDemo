@@ -51,7 +51,7 @@
         
         //中间区域
         _contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 10 + _titleLabel.frame.size.height + 10, self.bounds.size.width, self.bounds.size.height - (10 + _titleLabel.frame.size.height + 10) - 40)];
-        _contentView.backgroundColor = [UIColor clearColor];
+        _contentView.backgroundColor = RGBA(46, 193, 255, 1);
         [self addSubview:_contentView];
         
         [self addLineChartView];
@@ -74,7 +74,7 @@
 {
     _dataArrOfX = dataArrOfX;
     [self addXAxisViews];
-//    [self addLinesView]; // 方格
+    [self addLinesView]; // 方格
 }
 
 //点数据
@@ -92,9 +92,9 @@
 - (void)addLineChartView
 {
     _lineChartView = [[UIView alloc]initWithFrame:CGRectMake(15 + 30 + 5, 0, _contentView.bounds.size.width - (15 + 30 + 5) - 15, _contentView.bounds.size.height-20)];
-//    _lineChartView.layer.masksToBounds = YES;
-//    _lineChartView.layer.borderWidth = 0.5;
-//    _lineChartView.layer.borderColor = [UIColor colorWithRed:216/255.0 green:216/255.0  blue:216/255.0  alpha:1].CGColor;
+    _lineChartView.layer.masksToBounds = YES;
+    _lineChartView.layer.borderWidth = 0.5;
+    _lineChartView.layer.borderColor = [UIColor colorWithRed:216/255.0 green:216/255.0  blue:216/255.0  alpha:1].CGColor;
     _lineChartView.backgroundColor = [UIColor clearColor];
     [_contentView addSubview:_lineChartView];
 }
@@ -106,7 +106,7 @@
     {
         UILabel *leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, height * i - height / 2, 30, height)];
         leftLabel.font = [UIFont systemFontOfSize:10];
-        leftLabel.textColor = [UIColor clearColor];
+        leftLabel.textColor = [UIColor darkTextColor];
         leftLabel.textAlignment = NSTextAlignmentLeft;
         leftLabel.text = _dataArrOfY[i];
         leftLabel.backgroundColor = [UIColor clearColor];
@@ -121,7 +121,7 @@
     for (int i = 0;i< _dataArrOfX.count;i++ )
     {
         UILabel *leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(i*height - height / 2 + _lineChartView.frame.origin.x, _lineChartView.bounds.origin.y + _lineChartView.bounds.size.height+10, height, 20)];
-        leftLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:Multiply(14)];
+        leftLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:ScaleFont(14)];
         leftLabel.textColor = [UIColor colorWithHexString:@"#AEE1FF"];
         leftLabel.text = _dataArrOfX[i];
         leftLabel.textAlignment = NSTextAlignmentCenter;
@@ -248,11 +248,11 @@
         btn.backgroundColor = [UIColor colorWithHexString:@"#E6E423"];
         
         UILabel *titleLab = [[UILabel alloc] init];
-        titleLab.textColor = [UIColor whiteColor];
+        titleLab.textColor = [UIColor colorWithHexString:@"#E6E423"];
         titleLab.text = [NSString stringWithFormat:@"%.1f", [self.dataArrOfPoint[i] floatValue]];
         [titleLab sizeToFit];
         titleLab.center = CGPointMake(btn.center.x, btn.center.y - titleLab.frame.size.height);
-        titleLab.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:Multiply(15)];
+        titleLab.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:ScaleFont(15)];
         [_lineChartView addSubview:titleLab];
         
     }

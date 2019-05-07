@@ -23,9 +23,13 @@
     float blue = ((float)(hexColor & 0xFF))/255.0;
     return [UIColor colorWithRed:red green:green blue:blue alpha:opacity];
 }
++ (UIColor *)colorWithHexString:(NSString *)color {
+    return [self colorWithHexString:color alpha:1.0f];
+}
 // 颜色转换三：iOS中十六进制的颜色（以#开头）转换为UIColor
-+ (UIColor *) colorWithHexString: (NSString *)color
++ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
+    //删除字符串中的空格
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
     // String should be 6 or 8 characters
@@ -60,7 +64,7 @@
     [[NSScanner scannerWithString:gString] scanHexInt:&g];
     [[NSScanner scannerWithString:bString] scanHexInt:&b];
     
-    return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
+    return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:alpha];
 }
 
 

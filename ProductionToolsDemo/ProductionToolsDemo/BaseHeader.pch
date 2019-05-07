@@ -23,6 +23,6 @@
 #import "NetWorkManager.h"
 #import "NSString+ReplaceUnicode.h"
 #import "UIView+Extension.h"
-
+#import "UIColor+Hex.h"
 
 #endif /* BaseHeader_pch */

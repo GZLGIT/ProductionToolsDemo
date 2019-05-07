@@ -10,12 +10,17 @@
 #import "CustomDatePicker.h"
 #import "CustomTextTableViewCell.h"
 #import "TextCollectionViewController.h"
-
+#import "TextBrokenLineViewController.h"
+#import "CSLateralSpreadsViewController.h"
+#import "YSRightToLeftTransition.h"
+#import "YSHRMTrainingChartView.h"
+#import "YSHRMTrainingChartView.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, copy) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) YSHRMTrainingChartView *lineChatView;
 
 
 @end
@@ -28,12 +33,26 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.dataArray = @[@"请选择时间", @"圆滑的折线段", @"collectionView"].mutableCopy;
+    [self loadNewNavView];
     [self loadSubView];
     
-//    sdakj
 }
 
-
+- (void)loadNewNavView {
+    
+    UIButton *btn = [[UIButton alloc]init];
+    [btn setTitle:@"侧滑" forState:UIControlStateNormal];
+//    [btn setImage:[UIImage imageNamed:@"侧滑"] forState:UIControlStateNormal];
+//    btn.imageView.contentMode = UIViewContentModeCenter;
+    btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:ScaleFont(15)];
+    [btn addTarget:self action:@selector(clcikedSpreadsBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navView addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(ScaleW(48), ScaleH(38)));
+        make.top.mas_equalTo(kStatusBarHeight+ScaleH(2));
+        make.right.mas_equalTo(-10);
+    }];
+}
 - (void)loadSubView {
     
     
@@ -80,10 +99,32 @@
     
 }
 
+- (void)loadSubLineView {
+    [self.view addSubview:self.coverBtn];
+    _lineChatView = [[YSHRMTrainingChartView alloc] initWithFrame:CGRectMake(0, Size_height-300, Size_width, 230)];
+    [self.view addSubview:_lineChatView];
+    _lineChatView.dataArrOfY = @[@"100",@"65",@"35",@"0"];//Y轴坐标
+    _lineChatView.dataArrOfX = @[@"第一季度",@"第二季度",@"第三季度",@"第四季度"];//X轴坐标
+    _lineChatView.dataArrOfPoint = @[@"0",@"30",@"20",@"70"];
+    
+}
+
 - (void)choseTimeCellAction {
     
     CustomDatePicker *pickerView = [[CustomDatePicker alloc] initWithFrame:(CGRectMake(0, 500, Size_width, 200)) withType:(PickerViewTypeDefault)];
     [KEYWINDOW addSubview:pickerView];
+}
+
+- (void)clcikedSpreadsBtn:(UIButton*)sender {
+    
+    
+    CSLateralSpreadsViewController *deptVC = [CSLateralSpreadsViewController new];
+    deptVC.view.backgroundColor = [UIColor colorWithHexString:@"#000000" alpha:0.4];
+    //    deptVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    // 自定义的模态动画
+    deptVC.modalPresentationStyle = UIModalPresentationCustom;
+    deptVC.transitioningDelegate = [YSRightToLeftTransition sharedYSTransition];
+    [self presentViewController:deptVC animated:YES completion:nil];
 }
 
 #pragma mark--tableViewDelegate
@@ -113,7 +154,8 @@
             break;
             case 1:
         {
-            
+
+            [self loadSubLineView];
         }
             break;
         case 2:
